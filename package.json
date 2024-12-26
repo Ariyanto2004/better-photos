@@ -1,15 +1,21 @@
 {
-  "name": "better-photos",
+  "name": "betterphotos",
   "version": "1.0.0",
-  "description": "Professional CSS project to learn (project 2)",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "sass --watch --no-source-map main.scss style.css"
+    "compile": "sass --watch --no-source-map src/main.scss src/style.css",
+    "build:compile": "sass --no-source-map src/main.scss build/compiled.css",
+    "build:prefixes": "postcss build/compiled.css --use autoprefixer --output build/prefixed.css",
+    "build:optimize": "csso build/prefixed.css --output build/style.css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sass": "^1.83.0"
+    "autoprefixer": "^10.2.6",
+    "csso-cli": "^3.0.0",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.35.0"
   }
 }
